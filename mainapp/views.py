@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.shortcuts import render
 
 
@@ -6,6 +8,7 @@ from django.shortcuts import render
 def index(request):
     context = {
         'title': 'GeekShop',
+        'current_date': datetime.now(),
     }
     return render(request, 'mainapp/index.html', context)
 
@@ -13,5 +16,6 @@ def index(request):
 def products(request):
     context = {
         'title': 'GeekShop - Products',
+        'current_date': datetime.now(),
     }
     return render(request, 'mainapp/products.html', context)
